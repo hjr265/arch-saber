@@ -1,0 +1,9 @@
+[Unit]
+Description=Arturia
+
+[Service]
+ExecStart=/usr/bin/arturiad -config=/etc/arturia.tml
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
