@@ -18,7 +18,9 @@ md5sums=(
 )
 
 build() {
-  GOPATH="$srcdir" go get github.com/hjr265/arturia/...
+  mkdir -p "$srcdir"/src/git.hjr265.me/arturia
+  git clone https://git.hjr265.me/arturia/arturia.git "$srcdir"/src/git.hjr265.me/arturia/arturia
+  GOPATH="$srcdir" go get git.hjr265.me/arturia/arturia/...
 }
 
 package() {
@@ -28,5 +30,5 @@ package() {
   install -m755 -d "$pkgdir/usr/lib/systemd/system"
   install -m644 arturia@.service "$pkgdir/usr/lib/systemd/system"
   install -m755 -d "$pkgdir/etc"
-  install -m644 "$srcdir/src/github.com/hjr265/arturia/cmd/arturiad/config-sample.tml" "$pkgdir/etc/arturia.tml"
+  install -m644 "$srcdir/src/git.hjr265.me/arturia/arturia/cmd/arturiad/config-sample.tml" "$pkgdir/etc/arturia.tml"
 }
