@@ -1,6 +1,6 @@
 # Maintainer: Mahmud Ridwan <m[at]hjr265[dot]me>
 pkgname=arturia
-pkgver=20141106
+pkgver=20150110
 pkgrel=1
 pkgdesc=Saber
 url="https://arturia.io"
